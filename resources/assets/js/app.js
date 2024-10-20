@@ -1,11 +1,4 @@
 import './bootstrap.js';
-import flatpickr from "flatpickr";
+import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-
-document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.datepicker').forEach(function (el)  {
-        flatpickr(el,{
-            mode:'range'
-        });
-    });
-});
