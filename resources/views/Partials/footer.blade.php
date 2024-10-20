@@ -1,5 +1,5 @@
 <footer class="footer">
-    <p>Tomas Laravel VVK © 2024</p>
+    <p>Tomas Vaičiūnas PIT-21-I-NT Laravel VVK © 2024</p>
 </footer>
 </body>
 </html>

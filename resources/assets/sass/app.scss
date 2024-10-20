@@ -49,6 +49,7 @@ footer {
     background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
     font-size: 100px;
     color: white;
+    font-family: Nickainley, Tahoma, sans-serif;
     text-align: center;
 }
 #body, html {
@@ -56,3 +57,7 @@ footer {
       margin: 0;
       font-family: Arial, sans-serif;
   }
+@font-face {
+    font-family: Nickainley;
+    src: url('/public/fonts/Nickainley-Normal.ttf');
+}
