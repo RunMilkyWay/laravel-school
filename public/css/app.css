@@ -83,3 +83,13 @@ footer {
   font-family: Nickainley;
   src: url("/public/fonts/Nickainley-Normal.ttf");
 }
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 8px;
+  border: 1px solid #ddd;
+  text-align: left;
+}

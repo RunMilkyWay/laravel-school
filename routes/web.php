@@ -1,17 +1,12 @@
 <?php
 
-use App\Http\Controllers\RegistrationController;
-use App\Http\Controllers\SeminarController;
-use App\Http\Controllers\UserController;
-use App\Http\Middleware\AdminMiddleware;
-use App\Http\Middleware\UserMiddleware;
-use App\Http\Middleware\WorkerMiddleware;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Carbon;
 use Illuminate\Http\Request;
+use App\Http\Controllers\SeminarController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -19,7 +14,7 @@ Route::get('/', function () {
 
 Route::post('/login', [LoginController::class, 'login'])->name('login');
 
-Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth')->name('dashboard');
+Route::get('/dashboard', [SeminarController::class, 'index'])->middleware('auth')->name('dashboard');
 
 Route::post('/logout', function () {
     Auth::logout();

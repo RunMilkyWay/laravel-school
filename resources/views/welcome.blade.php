@@ -1,5 +1,6 @@
+@extends('layouts.app')
 
-@include('partials.header')
+@section('content')
 
 
 <div class="welcome">
@@ -7,6 +8,4 @@
 </div>
 
 
-
-
-@include('partials.footer')
+@endsection

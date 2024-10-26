@@ -42,6 +42,12 @@ class User extends Authenticatable
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
+            'type_id',
         ];
+    }
+
+    public function seminars(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    {
+        return $this->belongsToMany(Seminar::class, 'registrations'); // Assuming 'registrations' is the pivot table
     }
 }
