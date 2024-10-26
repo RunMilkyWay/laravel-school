@@ -1,5 +1,11 @@
 <?php
 
+use App\Http\Controllers\RegistrationController;
+use App\Http\Controllers\SeminarController;
+use App\Http\Controllers\UserController;
+use App\Http\Middleware\AdminMiddleware;
+use App\Http\Middleware\UserMiddleware;
+use App\Http\Middleware\WorkerMiddleware;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginController;
@@ -19,3 +25,4 @@ Route::post('/logout', function () {
     Auth::logout();
     return redirect('/'); // Redirect to the home page or wherever you want
 })->name('logout');
+
