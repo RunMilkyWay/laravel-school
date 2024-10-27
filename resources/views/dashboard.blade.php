@@ -45,11 +45,11 @@
                     <td>{{ $seminar->location }}</td>
                     <td>
                         @if($seminar->date > now()->addDays(30))
-                            Planned
+                            <span class="badge bg-warning text-dark">Planned</span>
                         @elseif($seminar->date > now())
-                            Upcoming
+                            <span class="badge bg-success">Upcoming</span>
                         @else
-                            Concluded
+                            <span class="badge bg-danger">Concluded</span>
                         @endif
                     </td>
                     <td class="d-flex gap-2">
