@@ -14,11 +14,13 @@ class Seminar extends Model
         'title',
         'description',
         'date',
+        'time',
+        'speakers',
+        'location',
         'created_by',
         'status',
     ];
-
-    public function users(): BelongsToMany
+    public function users()
     {
         return $this->belongsToMany(User::class, 'registrations');
     }

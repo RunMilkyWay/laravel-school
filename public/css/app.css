@@ -93,3 +93,13 @@ th, td {
   border: 1px solid #ddd;
   text-align: left;
 }
+
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* 100% of the viewport height */
+  text-align: center;
+  max-width: 800px; /* Optional: Set a max width */
+  margin: 0 auto; /* Center horizontally */
+}

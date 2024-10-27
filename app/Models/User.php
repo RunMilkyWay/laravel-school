@@ -46,8 +46,8 @@ class User extends Authenticatable
         ];
     }
 
-    public function seminars(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    public function seminars()
     {
-        return $this->belongsToMany(Seminar::class, 'registrations'); // Assuming 'registrations' is the pivot table
+        return $this->belongsToMany(Seminar::class, 'registrations');
     }
 }

@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->unsignedTinyInteger('type_id')->default(1); // Adding the type_id field with default value 1
             $table->rememberToken();
             $table->timestamps();
         });
