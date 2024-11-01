@@ -13,7 +13,9 @@ class LoginController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function login(Request $request)
+
+
+    public function login(Request $request): \Illuminate\Http\RedirectResponse
     {
         // Validate the login form data
         $request->validate([
@@ -35,4 +37,5 @@ class LoginController extends Controller
             'email' => 'The provided credentials do not match our records.',
         ]);
     }
+
 }

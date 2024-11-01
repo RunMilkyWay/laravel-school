@@ -9,20 +9,19 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Conference World</title>
 </head>
-<body>
+<body class="{{ auth()->check() ? 'authenticated' : '' }}">
 <!-- Top Navigation -->
 <div class="topnav">
-    <a class="active" href="#">Conference Room</a>
+    <a class="active" href="#">{{ __('messages.conference_room') }}</a>
     <div class="right">
         @if (Auth::check())
-            <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Log Out</a>
-            <!-- Logout form -->
+            <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('messages.logout') }}</a>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 @csrf
             </form>
         @else
-            <a href="#contact">Register</a>
-            <a href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Log-In</a>
+            <a href="#contact">{{ __('messages.register') }}</a>
+            <a href="#" data-bs-toggle="modal" data-bs-target="#loginModal">{{ __('messages.login') }}</a>
         @endif
     </div>
 </div>
@@ -58,7 +57,13 @@
 
 
 <footer class="footer">
-    <p>Tomas Vaičiūnas PIT-21-I-NT Laravel VVK © 2024</p>
+
+    <p class="text-white mb-0">
+        Tomas Vaičiūnas PIT-21-I-NT Laravel VVK © 2024
+        <a href="{{ route('locale.switch', 'en') }}" class="lang-link {{ app()->getLocale() === 'en' ? 'active' : '' }}">EN</a>
+        <span class="mx-1 text-white">|</span>
+        <a href="{{ route('locale.switch', 'lt') }}" class="lang-link {{ app()->getLocale() === 'lt' ? 'active' : '' }}">LT</a>
+    </p>
 </footer>
 </body>
 </html>

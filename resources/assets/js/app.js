@@ -20,3 +20,14 @@ function typeText(elementId, text, speed = 100) {
 document.addEventListener("DOMContentLoaded", function() {
     typeText("animated-text", "Welcome to Conference World!", 100);
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Check if the user is on the welcome page and if redirection is needed
+    const welcomeWrapper = document.querySelector("#welcome-wrapper[data-redirect='true']");
+
+    if (welcomeWrapper && document.body.classList.contains("authenticated")) {
+        setTimeout(function() {
+            window.location.href = "/dashboard"; // Adjust route if needed
+        }, 2000);
+    }
+});
