@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminUserController;
+use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\SeminarController;
 use App\Http\Controllers\DashboardController;
@@ -54,3 +55,9 @@ Route::get('/locale/{locale}', function ($locale) {
 })->name('locale.switch');
 
 
+Route::get('/register', [RegistrationController::class, 'showRegistrationForm'])->name('register.form');
+Route::post('/register', [RegistrationController::class, 'register'])->name('register');
+
+Route::get('/', function () {
+    return view('welcome');
+})->name('welcome');

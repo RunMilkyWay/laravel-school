@@ -12,7 +12,7 @@
 <body class="{{ auth()->check() ? 'authenticated' : '' }}">
 <!-- Top Navigation -->
 <div class="topnav">
-    <a class="active" href="#">{{ __('messages.conference_room') }}</a>
+    <a href="{{ auth()->check() ? route('dashboard') : route('welcome') }}" class="active">Conference Room</a>
     <div class="right">
         @if (Auth::check())
             <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('messages.logout') }}</a>
@@ -20,7 +20,7 @@
                 @csrf
             </form>
         @else
-            <a href="#contact">{{ __('messages.register') }}</a>
+            <a href="{{ route('register.form') }}" class="small-btn">Register</a>
             <a href="#" data-bs-toggle="modal" data-bs-target="#loginModal">{{ __('messages.login') }}</a>
         @endif
     </div>

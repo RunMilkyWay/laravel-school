@@ -145,3 +145,8 @@ th, td {
   margin: 0 !important;
   max-width: 100% !important;
 }
+
+.small-btn {
+  padding: 5px 10px;
+  font-size: 10px;
+}
