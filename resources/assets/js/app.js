@@ -1,6 +1,7 @@
 import './bootstrap.js';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'starback';
 
 function typeText(elementId, text, speed = 100) {
     const animatedText = document.getElementById(elementId);
@@ -18,7 +19,7 @@ function typeText(elementId, text, speed = 100) {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-    typeText("animated-text", "Welcome to Conference World!", 100);
+    typeText("animated-text", "Welcome to the Conference Room!", 100);
 });
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -31,3 +32,5 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 2000);
     }
 });
+
+

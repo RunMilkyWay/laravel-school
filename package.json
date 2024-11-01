@@ -24,6 +24,7 @@
         "bootstrap": "^5.3.3",
         "colors": "^1.4.0",
         "flatpickr": "^4.6.13",
-        "nodelib": "^1.0.0"
+        "nodelib": "^1.0.0",
+        "starback": "^2.1.6"
     }
 }

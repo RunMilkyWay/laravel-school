@@ -5,8 +5,7 @@
 body, html {
     height: 100%;
     margin: 0;
-    font-family: Arial, sans-serif;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow: hidden; /* Prevents vertical scrolling */
 }
 
 /* Top Navigation */
@@ -72,15 +71,72 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    width: 100%; /* Use 100% instead of 100vw to prevent overflow */
-    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+    height: calc(100vh - 80px); /* Adjust for footer height */
+    width: 100vw;
+    background: linear-gradient(135deg, #7f5a83, #c16285, #ffb6c1); /* Soft purple-pink gradient */
     font-size: 80px;
-    color: white;
-    font-family: Nickainley, Tahoma, sans-serif;
+    color: #ffffff;
+    font-family: 'Nickainley', Tahoma, sans-serif;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+    letter-spacing: 1px;
+    z-index: 0;
+    animation: gradientShift 10s ease-in-out infinite alternate;
 }
 
+/* Apple-inspired gradient animation with purple-pink hues */
+@keyframes gradientShift {
+    0% {
+        background: linear-gradient(135deg, #7f5a83, #c16285, #ffb6c1);
+    }
+    100% {
+        background: linear-gradient(135deg, #7f5a83, #c16285, #ffb6c1);
+    }
+}
+
+/* Starry Background Layer */
+.welcome::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background-image:
+        radial-gradient(circle, rgba(255, 255, 255, 0.4) 2px, transparent 3px),
+        radial-gradient(circle, rgba(255, 255, 255, 0.3) 2px, transparent 3px),
+        radial-gradient(circle, rgba(255, 255, 255, 0.2) 2px, transparent 3px),
+        radial-gradient(circle, rgba(255, 255, 255, 0.5) 2px, transparent 3px),
+        radial-gradient(circle, rgba(255, 255, 255, 0.35) 2px, transparent 3px);
+    background-size: 80px 80px; /* Increased to make stars more spaced out */
+    background-position: 10px 10px, 50px 30px, 90px 60px, 30px 90px, 70px 50px; /* Randomized positions */
+    opacity: 0.5;
+    animation: starsTwinkle 20s linear infinite;
+    z-index: -1;
+}
+
+/* Twinkling star animation */
+@keyframes starsTwinkle {
+    0%, 100% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Text Glow */
+#welcome-wrapper #animated-text {
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.3), 0 0 30px rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.welcome:hover #animated-text {
+    transform: scale(1.05);
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.4), 0 0 40px rgba(255, 255, 255, 0.3);
+}
 /* Font */
 @font-face {
     font-family: Nickainley;
@@ -125,8 +181,27 @@ th, td {
     margin: 0 !important;
     max-width: 100% !important;
 }
-
-.small-btn {
-    padding: 5px 10px;
-    font-size: 10px;
+.button {
+    background: linear-gradient(135deg, #7f5a83, #c16285, #ffb6c1);
+    color: #ffffff;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
+/* Hover effect for a subtle lift */
+.button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Focus effect for accessibility */
+.button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(127, 90, 131, 0.4); /* Soft purple outline */
+}
+

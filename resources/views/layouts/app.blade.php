@@ -20,7 +20,7 @@
                 @csrf
             </form>
         @else
-            <a href="{{ route('register.form') }}" class="small-btn">Register</a>
+            <a  href="{{ route('register.form') }}" class="small-btn">Register</a>
             <a href="#" data-bs-toggle="modal" data-bs-target="#loginModal">{{ __('messages.login') }}</a>
         @endif
     </div>
