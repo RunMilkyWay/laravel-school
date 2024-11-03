@@ -2,8 +2,16 @@
 
 @section('content')
     <div class="container d-flex justify-content-center">
-        <div class="col-md-6"> <!-- Adjust the width by changing col-md-6 to a smaller or larger number -->
-            <h2 class="text-center mt-5">Register</h2>
+        <div class="col-md-6">
+            <h2 class="text-center mt-5">{{ __('messages.register_title') }}</h2>
+
+            <!-- Display success message -->
+            @if (session('success'))
+                <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
+                    {{ session('success') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="{{ __('messages.close') }}"></button>
+                </div>
+            @endif
 
             <!-- Display validation errors -->
             @if ($errors->any())
@@ -20,26 +28,26 @@
                 @csrf
 
                 <div class="mb-3">
-                    <label for="name" class="form-label">Full name</label>
+                    <label for="name" class="form-label">{{ __('messages.full_name') }}</label>
                     <input type="text" name="name" class="form-control" id="name" required>
                 </div>
 
                 <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
+                    <label for="email" class="form-label">{{ __('messages.email') }}</label>
                     <input type="email" name="email" class="form-control" id="email" required>
                 </div>
 
                 <div class="mb-3">
-                    <label for="password" class="form-label">Password</label>
+                    <label for="password" class="form-label">{{ __('messages.password') }}</label>
                     <input type="password" name="password" class="form-control" id="password" required>
                 </div>
 
                 <div class="mb-3">
-                    <label for="password_confirmation" class="form-label">Confirm Password</label>
+                    <label for="password_confirmation" class="form-label">{{ __('messages.confirm_password') }}</label>
                     <input type="password" name="password_confirmation" class="form-control" id="password_confirmation" required>
                 </div>
 
-                <button type="submit" class="btn btn-primary w-100">Register</button>
+                <button type="submit" class="btn btn-primary w-100">{{ __('messages.register') }}</button>
             </form>
         </div>
     </div>

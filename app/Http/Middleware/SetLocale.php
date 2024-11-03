@@ -12,11 +12,8 @@ class SetLocale
 {
     public function handle($request, Closure $next)
     {
-        $locale = Session::get('locale', 'en');
-        App::setLocale($locale);
-
-        Log::info("Locale in middleware:", ['locale' => $locale]); // Log locale
-
+        $locale = session('locale', config('app.locale'));
+        App::setLocale($locale);  // Apply the locale to Laravel
         return $next($request);
     }
 }
