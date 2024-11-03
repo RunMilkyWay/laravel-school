@@ -37,6 +37,20 @@ body, html {
 /* Right Float for Top Navigation */
 .right {
     float: right;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Adjust space between the name, separator, and log out button */
+}
+
+.user-name {
+    font-weight: normal;
+    color: #f2f2f2;
+    font-size: inherit; /* Ensure it matches other topnav items */
+}
+
+.separator {
+    color: #f2f2f2;
+    margin: 0 4px; /* Small space around the separator */
 }
 
 /* Footer */
@@ -230,4 +244,19 @@ th, td {
     left: 50%;
     transform: translateX(-50%);
     z-index: 10;
+}
+
+.right a.logout-active {
+    background-color: #ddd; /* Lighter background color */
+    color: black;           /* Dark text color */
+    text-decoration: none;
+    padding: 14px 16px;
+    border-radius: 4px; /* Optional, for a button-like look */
+}
+
+/* Hover effect for the Log Out button */
+.right a.logout-active:hover {
+    background-color: #04AA6D; /* Darker background color on hover */
+    color: #f2f2f2;         /* Light text color */
+    text-decoration: none;
 }

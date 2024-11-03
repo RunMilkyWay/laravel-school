@@ -14,7 +14,13 @@
     <a href="{{ auth()->check() ? route('dashboard') : route('welcome') }}" class="active">{{ __('messages.conference_room') }}</a>
     <div class="right">
         @if (Auth::check())
-            <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('messages.logout') }}</a>
+            <div class="right">
+                <span class="user-name">{{ Auth::user()->name }}</span>
+                <span class="separator">|</span>
+                <a href="{{ route('logout') }}" class="logout-active" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    {{ __('messages.logout') }}
+                </a>
+            </div>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 @csrf
             </form>
