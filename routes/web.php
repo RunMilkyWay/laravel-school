@@ -10,7 +10,6 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 
-// Apply SetLocale middleware to all routes
 Route::middleware([SetLocale::class])->group(function () {
 
     Route::get('/', function () {
@@ -25,7 +24,7 @@ Route::middleware([SetLocale::class])->group(function () {
         return redirect('/');
     })->name('logout');
 
-    // Seminar-related routes
+    // Seminar-related
     Route::post('/seminar/{id}/register', [SeminarController::class, 'register'])->name('seminar.register');
     Route::post('/seminar/{id}/unregister', [SeminarController::class, 'unregister'])->name('seminar.unregister');
     Route::delete('/seminar/{id}', [SeminarController::class, 'delete'])->name('seminar.delete')->middleware('auth');
@@ -35,7 +34,7 @@ Route::middleware([SetLocale::class])->group(function () {
     Route::put('/seminar/{id}', [SeminarController::class, 'update'])->name('seminar.update')->middleware('auth');
     Route::get('/conference/{id}', [SeminarController::class, 'showConference'])->name('show');
 
-    // Admin routes for managing users
+    // Admin
     Route::middleware(['auth', AdminMiddleware::class])->group(function () {
         Route::get('/admin/users', [AdminUserController::class, 'index'])->name('admin.users.index');
         Route::post('/admin/users', [AdminUserController::class, 'store'])->name('admin.users.store');
@@ -43,7 +42,7 @@ Route::middleware([SetLocale::class])->group(function () {
         Route::delete('/admin/users/{id}', [AdminUserController::class, 'destroy'])->name('admin.users.delete');
     });
 
-    // Locale switch route
+    // Locale
     Route::get('/locale-switch/{locale}', function ($locale) {
         if (in_array($locale, ['en', 'lt'])) {
             session(['locale' => $locale]);
