@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+    <div data-aos="fade">
     <div class="container">
         <h1 class="mb-4">{{ __('messages.dashboard_seminars') }}</h1>
 
@@ -86,6 +87,8 @@
             @endforeach
             </tbody>
         </table>
+        </div>
+    </div>
 
         <!-- Edit Seminar Modal -->
         <div class="modal fade" id="editSeminarModal" tabindex="-1" aria-labelledby="editSeminarModalLabel" aria-hidden="true">
@@ -129,7 +132,7 @@
                 </div>
             </div>
         </div>
-    </div>
+
 
     <!-- JavaScript to Populate Modal with Seminar Data -->
     <script>

@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+    <div data-aos="fade">
     <div class="container">
         <h1 class="mb-4">{{ __('messages.create_new_seminar') }}</h1>
 
@@ -19,6 +20,7 @@
                 </ul>
             </div>
         @endif
+    </div>
 
         <!-- Seminar Creation Form -->
         <form action="{{ route('seminar.store') }}" method="POST" class="p-3 border rounded bg-light" style="max-width: 600px; margin: 0 auto;">

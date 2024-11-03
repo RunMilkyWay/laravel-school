@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+    <div data-aos="fade">
     <div class="container">
         <h1 class="mb-4">{{ __('messages.manage_users') }}</h1>
 
@@ -50,6 +51,8 @@
             @endforeach
             </tbody>
         </table>
+    </div>
+    </div>
 
         <!-- User Modal -->
         <div class="modal fade" id="userModal" tabindex="-1" aria-labelledby="userModalLabel" aria-hidden="true">
@@ -94,7 +97,6 @@
                     </div>
                 </div>
             </div>
-        </div>
 
         <!-- JavaScript for Modal Control -->
         <script>

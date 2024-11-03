@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+    <div data-aos="fade">
     <div class="container">
         <!-- Back Button with Margin -->
         <div class="d-flex justify-content-start mb-4 mt-4">
@@ -41,5 +42,6 @@
                 @endif
             </div>
         </div>
+    </div>
     </div>
 @endsection
